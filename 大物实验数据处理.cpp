@@ -88,7 +88,7 @@ int main()
 	int n;
 	double E;
 	double data[100];
-	cout<<"v1.2"<<endl;
+	cout<<"v1.3"<<endl;
 	cout<<"本软件以https://github.com/LoneWolfEric/College_Physics_Experiment_data_process 为框架进行改编，加入了其他数值的适配,如：置信因子tp（目前仅支持p=0.683，n&lt;=10的情况），b类不确定度的直接计算（Δ仪=sqrt3），尤其适用于hebuter们的实验数据处理"<<endl;
 	cout<<"源代码https://github.com/Violetlily/College_Physics_Experiment_Error_Calculator"<<endl;
 	cout<<"本软件用来计算大学物理实验中A,B及合成不确定度，相对不确定度的计算，来简化实验数据处理中对计算器的戳戳戳" <<endl;
@@ -101,7 +101,7 @@ int main()
 	cin>>delta;
 	cout<<"输入你的数据的数量：";
 	cin>>n;
-	if(n>100||n<=0)							//增加鲁棒性 
+	if(n>10||n<=0)							//增加鲁棒性 
 	{
 		cout<<"你丫的调戏我是吧，还让不让人好好抄实验报告了(╯‵□′)╯︵┻━┻"<<endl;
 		system("pause");
@@ -129,6 +129,7 @@ int main()
 //***************************************** 
 //结果部分
 //***************************************** 
+		cout<<"tp="<<tp<<endl;
 		cout<<"A不确定度:"<<error_1<<endl;
 		cout<<"B类不确定度"<<error_2<<endl;cout<<endl;	
 		cout<<"合成不确定度:"<<sqrt(error_1*error_1+error_2*error_2)<<endl;		//输出结果 
